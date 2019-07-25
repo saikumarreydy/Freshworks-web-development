@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Login </title>
+<link rel="stylesheet" href="rstyle.css" />
+</head>
+<script>
+function capitalizeFirstLetter(string) {
+  var word = string.split(" ");
+            for(var i = 0; i< word.length; i++){
+                word[i] = word[i].charAt(0).toUpperCase()+word[i].slice(1).toLowerCase();
+            }
+            return word.join("-");
+}
+function show(){
+var string=document.getElementById('myInput').value;
+var y=capitalizeFirstLetter(string);
+y = y.replace("Of", "of");
+y = y.replace("And", "and");
+document.getElementById('myImage').src='https://www.countries-ofthe-world.com/flags-normal/flag-of-' + y +'.png';
+
+}
+</script>
+<script>
+function myFunction()
+{
+window.location.href="https://restcountries.eu/rest/v2/name/" + document.getElementById('myInput').value;
+
+}
+</script>
+<body style="background-image:url(bgimage.jpg)">
+
+<div class="form">
+<form>
+<input  type="text" name="fname" id="myInput"  /> 
+<button type="button" onclick="show()">show flag</button>
+</form>
+<br><br><br>
+
+<a><img id="myImage" onclick="myFunction()" src="sai.gif" alt="" style="width="200" height="100";"></a>
+<p class="message">click on flag after it displayed to view the details of country</p>
+
+</div>
+<br><br><br><br><br><br><br><br><br><br>
+<footer >*please enter country names with spaces between words if there are multiple words in country name</footer>
+</body>
+</html>
+
+
