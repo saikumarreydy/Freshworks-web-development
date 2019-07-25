@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Login </title>
+<link rel="stylesheet" href="rstyle.css" />
+</head>
+<script>
+function capitalizeFirstLetter(string) {
+  if(typeof string==undefined) return;
+  var firstLetter = string[0] || string.charAt(0);
+  return firstLetter ? string.replace(/^./, firstLetter.toUpperCase()) : '';
+}
+function show(){
+var string=document.getElementById('myInput').value;
+var y=capitalizeFirstLetter(string);
+document.getElementById('myImage').src='https://www.countries-ofthe-world.com/flags-normal/flag-of-' + y +'.png';
+
+}
+</script>
+<script>
+function myFunction()
+{
+window.location.href="https://restcountries.eu/rest/v2/name/" + document.getElementById('myInput').value;
+
+}
+</script>
+<body style="background-image:url(bgimage.jpg)">
+
+<div class="form">
+<form>
+<input  type="text" name="fname" id="myInput"  /> 
+<button type="button" onclick="show()">show flag</button>
+</form>
+<br><br><br>
+
+<a><img id="myImage" onclick="myFunction()" src="sai.gif" alt="" style="width="200" height="100";"></a>
+<p class="message">click on flag after it displayed to view the details of country</p>
+</div>
+</body>
+</html>
+
+
